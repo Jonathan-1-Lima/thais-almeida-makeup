@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contato — Thaís Almeida</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Amsterdam&display=swap"
+    rel="stylesheet">
+  <style>
+    /* ===== ESTILOS ESPECÍFICOS DA PÁGINA CONTATO ===== */
+    body {
+      background-color: #fffafc;
+      color: #444;
+      font-family: "Poppins", sans-serif;
+    }
+
+    main {
+      padding-top: 120px;
+      text-align: center;
+    }
+
+    section#contato {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+    }
+
+    #contato h2 {
+      font-size: 2rem;
+      color: #af670a;
+      margin-bottom: 10px;
+      font-family: "Amsterdam", cursive;
+    }
+
+    #contato p.intro {
+      font-size: 1.1rem;
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+    .contato-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .contato-info a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1rem;
+      color: #444;
+      text-decoration: none;
+      background: #fef5f7;
+      padding: 12px 20px;
+      border-radius: 30px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .contato-info a:hover {
+      background: #ffe0e9;
+      transform: translateY(-2px);
+    }
+
+    .contato-info img.icon {
+      width: 24px;
+      height: 24px;
+    }
+
+    footer {
+      margin-top: 60px;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+
+
+    .contato-info img.icon {
+      width: 32px;
+      height: 32px;
+      flex-shrink: 0;
+      object-fit: contain;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ========== INÍCIO HEADER ========== -->
+  <header id="menu-principal">
+    <div class="menu-container">
+      <div class="logo"><a href="index.html" class="brand">Thaís Almeida</a></div>
+      <button class="menu-toggle">☰</button>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown"><a href="maquiagens.html">Maquiagens</a></li>
+        <li><a href="penteados.html">Penteados</a></li>
+        <li class="dropdown"><a href="servicos.html">Serviços</a></li>
+        <li><a href="portfolio.html">Portfólio</a></li>
+        <li class="selecionado"><a href="contato.html">Contato</a></li>
+        <li id="agendar"><a href="agendamento.html" id="agendar-btn">Agendar</a></li>
+      </ul>
+    </div>
+  </header>
+  <!-- ========== FIM HEADER ========== -->
+
+  <!-- ========== INÍCIO SEÇÃO CONTATO ========== -->
+  <main>
+    <section id="contato">
+      <h2>Entre em Contato</h2>
+      <p class="intro">Agende seu horário, tire dúvidas ou acompanhe meu trabalho nas redes sociais 💋</p>
+
+      <div class="contato-info">
+        <a href="https://api.whatsapp.com/send?phone=5592994402641" target="_blank">
+          <img src="assets/icons/whatsapp.svg" alt="WhatsApp" class="icon" /> WhatsApp
+        </a>
+
+        <a href="mailto:contato@thaisalmeida.com">
+          <img src="assets/icons/email.svg" alt="E-mail" class="icon" /> contato@thaisalmeida.com
+        </a>
+
+        <a href="https://www.instagram.com/thaismake.s/" target="_blank">
+          <img src="assets/icons/instagram.svg" alt="Instagram" class="icon" /> @thaismake.s
+        </a>
+      </div>
+    </section>
+  </main>
+  <!-- ========== FIM SEÇÃO CONTATO ========== -->
+
+  <!-- ========== INÍCIO RODAPÉ ========== -->
+  <footer id="rodape">
+    © 2025 Thaís Almeida | Todos os direitos reservados.
+  </footer>
+  <!-- ========== FIM RODAPÉ ========== -->
+
+
+  <!-- ========== BOTÃO CHATBOT (Botpress) ========== -->
+  <script src="https://cdn.botpress.cloud/webchat/v3.3/inject.js"></script>
+  <script src="https://files.bpcontent.cloud/2025/11/03/12/20251103122449-BXQ4IDK9.js"></script>
+</body>
+
+</html>

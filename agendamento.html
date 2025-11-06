@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agendar — Thaís Almeida</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Amsterdam&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #fffafc;
+      color: #444;
+      font-family: "Poppins", sans-serif;
+    }
+
+    main {
+      padding-top: 120px;
+      text-align: center;
+    }
+
+    section#agendamento {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 40px 30px;
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+    }
+
+    #agendamento h2 {
+      font-size: 2.2rem;
+      color: #af670a;
+      margin-bottom: 25px;
+      font-family: "Amsterdam", cursive;
+    }
+
+    #agendamento p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #555;
+      margin: 8px 0;
+    }
+
+    .passos {
+      margin: 20px 0 35px;
+    }
+
+    .formas-pagamento {
+      background: #fff1f5;
+      padding: 20px;
+      border-radius: 15px;
+      display: inline-block;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    .formas-pagamento h3 {
+      color: #af670a;
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .formas-pagamento p {
+      margin: 5px 0;
+    }
+
+    .botao-agendar {
+      margin-top: 30px;
+    }
+
+    .botao-agendar a {
+      display: inline-block;
+      background: linear-gradient(135deg, #ffb6c1, #af670a);
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 14px 35px;
+      border-radius: 30px;
+      transition: all 0.3s ease;
+      font-size: 1rem;
+    }
+
+    .botao-agendar a:hover {
+      background: linear-gradient(135deg, #ffc6cc, #c87e1a);
+      transform: translateY(-2px);
+    }
+
+    footer {
+      margin-top: 60px;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #777;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ====== MENU FIXO ====== -->
+  <header id="menu-principal">
+    <div class="menu-container">
+      <div class="logo"><a href="index.html" class="brand">Thaís Almeida</a></div>
+      <button class="menu-toggle">☰</button>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+          <li class="dropdown"><a href="maquiagens.html">Maquiagens</a></li>
+          <li><a href="penteados.html">Penteados</a></li>
+          <li class="dropdown"><a href="servicos.html">Serviços</a></li>
+          <li><a href="portfolio.html">Portfólio</a></li>
+          <li><a href="contato.html">Contato</a></li>
+          <li class="selecionado" id="agendar"><a href="agendamento.html" id="agendar-btn">Agendar</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ====== CONTEÚDO PRINCIPAL ====== -->
+  <main>
+    <section id="agendamento">
+      <h2>Informações para o Agendamento</h2>
+
+      <div class="passos">
+        <p><strong>1º Passo:</strong><br>
+        Escolha qual das opções melhor lhe atende.</p>
+
+        <p><strong>2º Passo:</strong><br>
+        Efetue o pagamento referente a 30% para a reserva.<br>
+        (Em caso de desistência o valor não será reembolsado.)</p>
+      </div>
+
+      <div class="formas-pagamento">
+        <h3>Formas de pagamento:</h3>
+        <p>• Pix</p>
+        <p>• Crédito (com acréscimo)</p>
+        <p>• Débito (com acréscimo)</p>
+      </div>
+
+      <div class="botao-agendar">
+        <a href="#botpress-webchat">💄 Agende seu horário</a>
+      </div>
+
+      <!-- Informação interna (não exibida ao público) -->
+      <!-- Atendimento somente com hora marcada (sem horários fixos) -->
+    </section>
+  </main>
+
+  <!-- ========== INÍCIO RODAPÉ ========== -->
+  <footer id="rodape">
+    © 2025 Thaís Almeida | Todos os direitos reservados.
+  </footer>
+  <!-- ========== FIM RODAPÉ ========== -->
+
+
+  <!-- Botpress Assistant (envia confirmação de pagamento e agendamento) -->
+  <script src="https://cdn.botpress.cloud/webchat/v3.3/inject.js"></script>
+  <script src="https://files.bpcontent.cloud/2025/11/03/12/20251103122449-BXQ4IDK9.js"></script>
+
+  <script>
+    // Integração básica para que o botão abra diretamente o chat
+    document.querySelector('.botao-agendar a').addEventListener('click', (e) => {
+      e.preventDefault();
+      window.botpressWebChat.sendEvent({ type: 'show' });
+      window.botpressWebChat.sendEvent({
+        type: 'proactive-trigger',
+        payload: { text: 'Olá! Quero agendar um horário ✨' }
+      });
+    });
+  </script>
+</body>
+</html>

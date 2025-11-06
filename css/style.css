@@ -1,0 +1,814 @@
+/* style.css - tema rosado/dourado */
+/* ===================== Global ===================== */
+:root {
+  --bg: #fff6f8;
+  --accent: #d3ad74;
+  --text: #2b2b2b;
+  --muted: #85706a;
+}
+
+* {
+  box-sizing: border-box
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased
+}
+
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 40px 20px
+}
+
+/* ===================== Menu ===================== */
+#menu-principal {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06)
+}
+
+.menu-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px
+}
+
+.brand {
+  font-weight: 700;
+  color: var(--accent);
+  font-size: 1.25rem;
+  text-decoration: none
+}
+
+#menu-principal ul {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  align-items: center
+}
+
+#menu-principal a {
+  color: var(--text);
+  text-decoration: none;
+  padding: 8px 10px;
+  border-radius: 10px;
+  transition: all .2s
+}
+
+#menu-principal a:hover {
+  background: rgba(211, 173, 116, 0.12);
+  color: var(--accent)
+}
+
+#menu-principal #agendar a {
+  background: var(--accent);
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 22px
+}
+
+#menu-principal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+body {
+  padding-top: 90px;
+  /* ajuste conforme a altura do seu menu */
+}
+
+/* --- Nome "Thaís Almeida" no topo (mesmo estilo do 'Sobre') --- */
+.logo .brand {
+  font-family: "Amsterdam", cursive; /* mesma fonte elegante */
+  font-size: 2rem;                   /* ajuste conforme o tamanho do menu */
+  color: #af670a;                    /* dourado rosado usado no site */
+  text-decoration: none;
+  letter-spacing: 1px;
+  font-weight: normal;
+  transition: color 0.3s ease;
+}
+
+.logo .brand:hover {
+  color: #d89b6e; /* leve destaque ao passar o mouse */
+}
+
+
+/* submenu */
+#menu-principal ul li {
+  position: relative
+}
+
+#menu-principal ul li .submenu {
+  display: none;
+  position: absolute;
+  top: 42px;
+  left: 0;
+  background: #fff;
+  border-radius: 10px;
+  padding: 6px 6px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  min-width: 180px
+}
+
+#menu-principal ul li:hover .submenu {
+  display: flex;
+  flex-direction: column
+}
+
+#menu-principal ul li .submenu a {
+  padding: 8px 12px;
+  display: block;
+  color: var(--text)
+}
+
+/* responsive menu toggle */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: var(--accent)
+}
+
+/* ===================== Frase/Imagem Destaque ===================== */
+/* ---------- Frase de efeito ---------- */
+#frase-destaque {
+  text-align: center;
+  background: linear-gradient(180deg, #fff6f4 0%, #fbe7dc 100%);
+  padding: 60px 20px;
+  margin-top: 50px;
+}
+
+#frase-destaque .frase {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.8rem;
+  color: #444;
+  line-height: 1.4;
+  max-width: 700px;
+  margin: 0 auto;
+  font-weight: 400;
+}
+
+#frase-destaque .frase span {
+  font-family: "Amsterdam", cursive;
+  font-size: 2.2rem;
+  color: #af670a;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+
+/* ===================== Sobre ===================== */
+#sobre {
+  padding: 60px 0;
+  background: transparent;
+  margin-left: 80px;
+}
+
+.sobre-container {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  flex-wrap: wrap
+}
+
+.sobre-texto {
+  flex: 1;
+  min-width: 260px
+}
+
+.sobre-texto h2 {
+  font-size: 1.8rem;
+  margin: 0 0 16px
+}
+
+.assinatura {
+  font-family: 'Amsterdam', cursive;
+  color: var(--accent);
+  font-size: 2.2rem;
+  display: inline-block;
+  margin-left: 8px
+}
+
+.sobre-foto {
+  flex: 1;
+  text-align: center
+}
+
+.sobre-foto img {
+  width: 100%;
+  max-width: 380px;
+  border-radius: 14px;
+  object-fit: cover
+}
+
+/* ===================== Cards / Serviços ===================== */
+.cards {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap
+}
+
+.card {
+  background: #fff;
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  flex: 1;
+  min-width: 220px
+}
+
+#servicos-home .card.destaque {
+  background: #fff2f7;
+  border: 1px solid #f7c5d9;
+  box-shadow: 0 4px 10px rgba(255, 192, 203, 0.2);
+}
+
+/* ===== Botão "Ver mais serviços" ===== */
+.botao-centro {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.btn-servicos {
+  display: inline-block;
+  background-color: #af670a;
+  color: #fff;
+  padding: 12px 32px;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(175, 103, 10, 0.2);
+}
+
+.btn-servicos:hover {
+  background-color: #d48c1b;
+  box-shadow: 0 6px 15px rgba(175, 103, 10, 0.3);
+  transform: translateY(-2px);
+}
+
+
+/* ===================== Galeria ===================== */
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px
+}
+
+.galeria-grid img {
+  width: 100%;
+  border-radius: 10px;
+  transition: transform .25s;
+  cursor: pointer
+}
+
+.galeria-grid img:hover {
+  transform: scale(1.04)
+}
+
+.legenda {
+  font-size: .9rem;
+  color: var(--muted);
+  margin-top: 8px
+}
+
+.link-galeria {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.link-galeria .galeria-grid {
+  cursor: pointer;
+}
+
+.link-galeria:hover {
+  opacity: 0.9;
+  transition: 0.3s ease;
+}
+
+
+/* Vídeos mini grid */
+.videos-grid {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap
+}
+
+.video-thumb {
+  position: relative;
+  width: 240px;
+  height: 140px;
+  border-radius: 10px;
+  overflow: hidden
+}
+
+.video-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover
+}
+
+.play-btn {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  font-size: 18px;
+  cursor: pointer
+}
+
+/* -------- GALERIA -------- */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.portfolio-grid .item {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.portfolio-grid .item:hover {
+  transform: scale(1.03);
+}
+
+.portfolio-grid img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+.portfolio-grid .caption {
+  text-align: center;
+  margin-top: 8px;
+  color: #444;
+  font-size: 0.9rem;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  max-width: 90%;
+  max-height: 85%;
+  position: relative;
+}
+
+#modalHome img {
+  max-width: 90%;
+  max-height: 85vh;
+  border-radius: 12px;
+}
+
+
+.modal-content img,
+.modal-content video {
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: #fff;
+  font-size: 36px;
+  cursor: pointer;
+  font-weight: bold;
+  z-index: 1100;
+}
+
+.close:hover {
+  color: #f5b08a; /* tom rosado/dourado */
+}
+
+
+#modalVideoHome {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+}
+
+#modalVideoHome video {
+  max-width: 90%;
+  max-height: 85vh;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+#modalVideoHome .close {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  color: #fff;
+  font-size: 2.5rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+#modalVideoHome .close:hover {
+  color: #ffae00;
+}
+
+
+
+/* ===================== Portfolio Grid ===================== */
+.filter-bar {
+  margin: 18px 0;
+  display: flex;
+  gap: 8px
+}
+
+.filter-btn {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  background: #fff;
+  cursor: pointer
+}
+
+.filter-btn.active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent)
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px
+}
+
+.item {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden
+}
+
+.item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover
+}
+
+.caption {
+  position: absolute;
+  left: 8px;
+  bottom: 8px;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 6px 8px;
+  border-radius: 6px;
+  font-size: .85rem
+}
+
+/* ===================== Contato ===================== */
+#form-contato input,
+#form-contato textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #e6dede;
+  margin-bottom: 8px
+}
+
+#form-contato button {
+  background: var(--accent);
+  color: #fff;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer
+}
+
+/* ===================== Rodapé ===================== */
+#rodape {
+  padding: 20px 0;
+  text-align: center;
+  color: var(--muted)
+}
+
+/* ===================== Responsive ===================== */
+@media(max-width:900px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr)
+  }
+
+  .galeria-grid {
+    grid-template-columns: repeat(2, 1fr)
+  }
+
+  .menu-toggle {
+    display: block
+  }
+
+  #menu-principal ul {
+    display: none;
+    width: 100%
+  }
+
+  #menu-principal ul.show {
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 12px;
+    border-radius: 10px;
+    margin-top: 8px
+  }
+}
+
+/* ===== Ajustes gerais para todas as páginas ===== */
+
+/* Faz o menu ficar fixo no topo */
+#menu-principal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  z-index: 1000;
+  padding: 10px 0;
+}
+
+/* Garante que o conteúdo não fique escondido atrás do menu */
+main {
+  margin-top: 100px; /* ajuste conforme a altura do menu */
+}
+
+/* Margem e espaçamento mais confortável nas seções */
+section {
+  padding: 60px 8%;
+}
+
+/* Centraliza e dá respiro nos títulos e textos */
+section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+section p {
+  text-align: center;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto 40px auto;
+}
+
+/* Grade da galeria */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  justify-items: center;
+}
+
+.portfolio-grid .item {
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.portfolio-grid .item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+.portfolio-grid img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Legendas */
+.caption {
+  padding: 12px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Icones */
+.contato-info a:hover img.icon {
+  filter: brightness(1.3) saturate(1.2);
+}
+
+/* ===== Estilo exclusivo da página Maquiagens ===== */
+.page-maquiagens main {
+  padding-top: 120px;
+  background: #fffafc;
+}
+
+/* Frase de efeito com fonte antiga */
+.page-maquiagens .frase-efeito {
+  text-align: center;
+  background: linear-gradient(135deg, #ffd6e8, #fff3f6);
+  padding: 60px 20px;
+  border-radius: 0 0 30px 30px;
+  margin-bottom: 80px;
+}
+
+.page-maquiagens .frase-efeito h2 {
+  font-family: "Amsterdam", cursive;
+  font-size: 2.3rem;
+  color: #af670a;
+}
+
+/* Seções principais */
+.page-maquiagens .maquiagem-tipo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto 100px;
+  padding: 40px 20px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease;
+}
+
+.page-maquiagens .maquiagem-tipo:hover {
+  transform: translateY(-4px);
+}
+
+/* Alternar direções */
+.page-maquiagens .maquiagem-tipo.direita {
+  flex-direction: row-reverse;
+}
+
+.page-maquiagens .maquiagem-tipo.esquerda {
+  flex-direction: row;
+}
+
+/* Texto */
+.page-maquiagens .maquiagem-tipo .texto {
+  flex: 1;
+}
+
+.page-maquiagens .maquiagem-tipo h2 {
+  font-family: "Amsterdam", cursive;
+  font-size: 2rem;
+  color: #af670a;
+  margin-bottom: 15px;
+}
+
+.page-maquiagens .maquiagem-tipo p {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+
+/* Galeria */
+.page-maquiagens .galeria {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.page-maquiagens .galeria img {
+  width: 100%;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.page-maquiagens .galeria img:hover {
+  transform: scale(1.05);
+}
+
+/* CTA */
+.page-maquiagens .cta {
+  text-align: center;
+  margin: 60px 0;
+}
+
+.page-maquiagens .cta a {
+  background: #af670a;
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.page-maquiagens .cta a:hover {
+  background: #d48c1b;
+}
+
+/* Modal (foto ampliada) */
+.modal-maquiagem {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.modal-maquiagem img {
+  max-width: 90%;
+  max-height: 85vh;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+.modal-maquiagem .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* ===================== Rodapé fixado no fundo (todas as páginas) ===================== */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* garante que o corpo ocupe a tela toda */
+}
+
+main {
+  flex: 1 0 auto; /* faz o conteúdo ocupar o espaço necessário */
+}
+
+
+/* Rodapé unificado */
+#rodape {
+  background: linear-gradient(180deg, #fff6f4 0%, #fbe7dc 100%);
+  color: var(--muted);
+  text-align: center;
+  padding: 15px 10px;
+  font-size: 0.95rem;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.03);
+  margin-top: auto;
+}

@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <title>Thaís Almeida - Maquiadora Profissional</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.cdnfonts.com/css/amsterdam-2" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/amsterdam" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ==== CORREÇÃO DO MODAL DE IMAGENS ==== */
+    #modalHome {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.85);
+      justify-content: center;
+      align-items: center;
+    }
+
+    #modalHome img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      object-fit: contain;
+    }
+
+    #modalHome .close {
+      position: absolute;
+      top: 20px;
+      right: 40px;
+      color: #fff;
+      font-size: 2.5rem;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    #modalHome .close:hover {
+      color: #ffae00;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ====================== Início Header / Menu ====================== -->
+  <header>
+    <nav id="menu-principal">
+      <div class="menu-container">
+        <div class="logo"><a href="index.html" class="brand">Thaís Almeida</a></div>
+        <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+        <ul>
+          <li class="selecionado"><a href="index.html">Home</a></li>
+          <li class="dropdown"><a href="maquiagens.html">Maquiagens</a></li>
+          <li><a href="penteados.html">Penteados</a></li>
+          <li class="dropdown"><a href="servicos.html">Serviços</a></li>
+          <li><a href="portfolio.html">Portfólio</a></li>
+          <li><a href="contato.html">Contato</a></li>
+          <li id="agendar"><a href="agendamento.html" id="agendar-btn">Agendar</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <!-- ====================== Fim Header / Menu ====================== -->
+
+  <!-- ====================== Início Conteúdo Principal ====================== -->
+  <main>
+
+    <!-- ====================== Início Frase  ====================== -->
+    <section id="frase-destaque">
+      <h2 class="frase">
+        Deus te fez <span>única, incrível e bela.</span><br>
+        Eu realço essa beleza natural.
+      </h2>
+    </section>
+    <!-- ====================== Fim Frase ====================== -->
+
+    <!-- ====================== Início Sobre ====================== -->
+    <section id="sobre">
+      <div class="sobre-container">
+        <div class="sobre-texto">
+          <h2>Sobre a <span class="assinatura">Thaís Almeida</span></h2>
+          <p>Sou maquiadora profissional há 8 anos. Iniciei a carreira na cidade de Parintins e atuo em Manaus.</p>
+          <p>Meu carro chefe são produções de maquiagem e penteado sociais, sempre com foco em realçar a beleza natural
+            de cada cliente.</p>
+        </div>
+        <div class="sobre-foto">
+          <img src="assets/img/foto-perfil-placeholder.jpg" alt="Foto Thaís">
+        </div>
+      </div>
+    </section>
+    <!-- ====================== Fim Sobre ====================== -->
+
+    <!-- ====================== Início Serviços ====================== -->
+    <section id="servicos-home" class="secao">
+      <div class="container">
+        <h2>Serviços</h2>
+        <p class="intro">Confira algumas das principais opções disponíveis — sempre com atendimento personalizado e foco
+          em realçar sua beleza natural.</p>
+
+        <div class="cards">
+          <article class="card">
+            <h4>Maquiagem Express</h4>
+            <p>Pele de média resistência com uma cor de sombra e aplicação de cílios postiços. Ideal para ensaios
+              fotográficos e eventos curtos em ambientes climatizados.</p>
+          </article>
+
+          <article class="card">
+            <h4>Maquiagem Social Premium</h4>
+            <p>Pele de alta resistência com técnicas avançadas de esfumado, cores e/ou aplicações nos olhos. Ideal para
+              formaturas, shows e eventos de longa duração.</p>
+          </article>
+
+          <article class="card">
+            <h4>Penteados</h4>
+            <p>Modelagens e finalizações elegantes que valorizam o estilo e a personalidade da cliente, perfeitos para
+              ocasiões especiais.</p>
+          </article>
+
+          <article class="card destaque">
+            <h4>Aula de Automaquiagem</h4>
+            <p>Aprenda técnicas profissionais para realçar sua beleza no dia a dia com os produtos que você já possui.
+              Aulas personalizadas e práticas.</p>
+          </article>
+        </div>
+
+        <div class="botao-centro">
+          <a href="servicos.html" class="btn-servicos">Ver mais serviços</a>
+        </div>
+      </div>
+    </section>
+    <!-- ====================== Fim Serviços ====================== -->
+
+    <!-- ====================== Início Galeria ====================== -->
+    <section id="galeria" class="galeria">
+      <h2>Galeria</h2>
+      <p>Clique para ampliar as fotos. Veja mais no portfólio completo!</p>
+
+      <div class="galeria-grid">
+        <div class="item" data-type="image">
+          <img src="assets/img/galeria-1-placeholder.jpg" alt="Cliente — Look social">
+          <p class="caption">Cliente — Look social</p>
+        </div>
+
+        <div class="item" data-type="image">
+          <img src="assets/img/galeria-2-placeholder.jpg" alt="Penteado festa">
+          <p class="caption">Penteado festa</p>
+        </div>
+
+        <div class="item" data-type="image">
+          <img src="assets/img/galeria-3-placeholder.jpg" alt="Maquiagem — Ensaio">
+          <p class="caption">Maquiagem — Ensaio</p>
+        </div>
+      </div>
+
+      <div class="botao-centro">
+        <a href="portfolio.html" class="btn-servicos">Ver mais no Portfólio</a>
+      </div>
+
+      <!-- Modal para visualizar imagens -->
+      <div id="modalHome" class="modal">
+        <span class="close">&times;</span>
+        <img id="modalImgHome" src="" alt="">
+      </div>
+    </section>
+    <!-- ====================== Fim Galeria ====================== -->
+
+    <!-- ====================== Início Vídeos ====================== -->
+    <section id="videos-home" class="secao">
+      <div class="container">
+        <h2>Vídeos</h2>
+        <div class="videos-grid">
+          <div class="video-thumb" data-video="assets/videos/VIDEO_01_PLACEHOLDER.mp4">
+            <img src="assets/img/IMG_4197.JPG" alt="vídeo 1">
+            <button class="play-btn">▶</button>
+          </div>
+
+          <div class="video-thumb" data-video="assets/videos/VIDEO_02_PLACEHOLDER.mp4">
+            <img src="assets/img/IMG_4172.PNG" alt="vídeo 2">
+            <button class="play-btn">▶</button>
+          </div>
+        </div>
+
+        <div class="botao-centro">
+          <a href="portfolio.html" class="btn-servicos">Ver mais vídeos</a>
+        </div>
+
+        <div id="modalVideoHome" class="modal">
+          <span class="close">&times;</span>
+          <video id="videoHomePlayer" controls>
+            <source src="" type="video/mp4">
+            Seu navegador não suporta vídeos.
+          </video>
+        </div>
+      </div>
+    </section>
+    <!-- ====================== Fim Vídeos ====================== -->
+
+  </main>
+  <!-- ====================== Fim Conteúdo Principal ====================== -->
+
+  <!-- ========== INÍCIO RODAPÉ ========== -->
+  <footer id="rodape">
+    © 2025 Thaís Almeida | Todos os direitos reservados.
+  </footer>
+  <!-- ========== FIM RODAPÉ ========== -->
+
+  <script src="js/script.js"></script>
+  <script src="https://cdn.botpress.cloud/webchat/v3.3/inject.js"></script>
+  <script src="https://files.bpcontent.cloud/2025/11/03/12/20251103122449-BXQ4IDK9.js"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Seleciona todos os botões e links que contenham o texto "Agende seu horário"
+    document.querySelectorAll('a, button').forEach(el => {
+      if (el.textContent.trim().toLowerCase().includes("agende seu horário")) {
+        el.addEventListener("click", (e) => {
+          e.preventDefault();
+          // Abre o chat da assistente imediatamente
+          if (window.botpressWebChat) {
+            window.botpressWebChat.sendEvent({ type: 'show' });
+            window.botpressWebChat.sendEvent({
+              type: 'proactive-trigger',
+              channel: 'web',
+              payload: { text: "Olá! 💄 Vamos agendar seu horário?" }
+            });
+          } else {
+            alert("Assistente indisponível no momento. Tente novamente em instantes.");
+          }
+        });
+      }
+    });
+  });
+</script>
+
+
+</body>
+</html>

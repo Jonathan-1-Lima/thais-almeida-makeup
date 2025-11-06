@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Penteados — Thaís Almeida</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Amsterdam&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <!-- ========== INÍCIO HEADER ========== -->
+  <header id="menu-principal">
+    <div class="menu-container">
+      <div class="logo"><a href="index.html" class="brand">Thaís Almeida</a></div>
+      <button class="menu-toggle">☰</button>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="maquiagens.html">Maquiagens</a></li>
+        <li class="selecionado"><a href="penteados.html">Penteados</a></li>
+        <li><a href="servicos.html">Serviços</a></li>
+        <li><a href="portfolio.html">Portfólio</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        <li id="agendar"><a href="agendamento.html" id="agendar-btn">Agendar</a></li>
+      </ul>
+    </div>
+  </header>
+  <!-- ========== FIM HEADER ========== -->
+
+  <!-- ========== INÍCIO SEÇÃO PRINCIPAL ========== -->
+  <main>
+
+    <!-- ======= INÍCIO FRASE DE EFEITO ======= -->
+    <section class="frase-efeito">
+      <h2>Transforme seu visual com <span>penteados únicos</span> e cheios de estilo!</h2>
+    </section>
+    <!-- ======= FIM FRASE DE EFEITO ======= -->
+
+    <!-- ======= INÍCIO SEÇÃO PENTEADOS ======= -->
+    <section id="penteados" class="galeria">
+      <h2>Penteados</h2>
+      <p class="intro">Cada penteado é pensado para valorizar sua beleza e destacar seu estilo — do casual ao
+        sofisticado.</p>
+
+      <div class="portfolio-grid">
+
+        <!-- 🔸 EXEMPLOS DE IMAGENS (substitua por suas próprias imagens em assets/img/) -->
+        <div class="item" data-type="image">
+          <img src="assets/img/IMG_6506.JPG" alt="Penteado Social">
+          <p class="caption">Penteado Social — Cliente 1</p>
+        </div>
+
+        <div class="item" data-type="image">
+          <img src="assets/img/IMG_6712.JPG" alt="Penteado para Festa">
+          <p class="caption">Penteado Festa — Glamour moderno</p>
+        </div>
+
+        <!-- 🔸 EXEMPLO DE VÍDEO -->
+        <div class="item" data-type="video" data-video="assets/videos/VIDEO_01_PLACEHOLDER.mp4">
+          <img src="assets/img/IMG_4197.jpg" alt="Prévia do vídeo de penteado">
+          <p class="caption">Vídeo — Tutorial de Penteado</p>
+        </div>
+      </div>
+
+      <!-- ===== MODAL (para abrir imagens e vídeos clicáveis) ===== -->
+      <div id="mediaModal" class="modal">
+        <span class="close">&times;</span>
+        <div class="modal-content">
+          <img id="modalImage" src="" alt="">
+          <video id="modalVideo" controls>
+            <source src="" type="video/mp4">
+            Seu navegador não suporta vídeos.
+          </video>
+        </div>
+      </div>
+    </section>
+    <!-- ======= FIM SEÇÃO PENTEADOS ======= -->
+
+  </main>
+  <!-- ========== FIM SEÇÃO PRINCIPAL ========== -->
+
+  <!-- ========== INÍCIO RODAPÉ ========== -->
+  <footer id="rodape">
+    © 2025 Thaís Almeida | Todos os direitos reservados.
+  </footer>
+  <!-- ========== FIM RODAPÉ ========== -->
+
+
+  <!-- ========== BOTÃO CHATBOT (Botpress) ========== -->
+  <script src="https://cdn.botpress.cloud/webchat/v3.3/inject.js"></script>
+  <script src="https://files.bpcontent.cloud/2025/11/03/12/20251103122449-BXQ4IDK9.js"></script>
+
+  <!-- ========== JAVASCRIPT GALERIA ========== -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const modal = document.getElementById("mediaModal");
+      const modalImage = document.getElementById("modalImage");
+      const modalVideo = document.getElementById("modalVideo");
+      const closeModal = document.querySelector(".close");
+
+      document.querySelectorAll(".portfolio-grid .item").forEach(item => {
+        item.addEventListener("click", () => {
+          const type = item.getAttribute("data-type");
+          modal.style.display = "flex";
+
+          if (type === "video") {
+            const videoSrc = item.getAttribute("data-video");
+            modalVideo.src = videoSrc;
+            modalVideo.style.display = "block";
+            modalImage.style.display = "none";
+            modalVideo.play();
+          } else {
+            const imgSrc = item.querySelector("img").src;
+            modalImage.src = imgSrc;
+            modalImage.style.display = "block";
+            modalVideo.style.display = "none";
+          }
+        });
+      });
+
+      closeModal.addEventListener("click", () => {
+        modal.style.display = "none";
+        modalVideo.pause();
+      });
+
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) {
+          modal.style.display = "none";
+          modalVideo.pause();
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

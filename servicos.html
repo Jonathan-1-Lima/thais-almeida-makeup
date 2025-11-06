@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Serviços — Thaís Almeida</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Amsterdam&display=swap"
+    rel="stylesheet">
+  <style>
+    body {
+      background-color: #fffafc;
+      color: #444;
+      font-family: "Poppins", sans-serif;
+    }
+
+    main {
+      padding-top: 120px;
+      text-align: center;
+    }
+
+    section#servicos {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 40px 30px;
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+    }
+
+    #servicos h2 {
+      font-size: 2.2rem;
+      color: #af670a;
+      margin-bottom: 25px;
+      font-family: "Amsterdam", cursive;
+    }
+
+    #servicos p,
+    #servicos li {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #555;
+      margin: 8px 0;
+      text-align: center;
+    }
+
+    ul.tabela {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+    }
+
+    ul.tabela li strong {
+      color: #000;
+    }
+
+    /* Destaque suave para Aula de Automaquiagem */
+    .aula-auto {
+      background: #fff1f5;
+      color: #af670a;
+      font-weight: 600;
+      display: inline-block;
+      padding: 12px 25px;
+      border-radius: 30px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      margin: 25px 0;
+      transition: all 0.3s ease;
+    }
+
+    .aula-auto:hover {
+      background: #ffe2ec;
+      transform: translateY(-2px);
+    }
+
+    #servicos .categoria h3 {
+      font-size: 1.3rem;
+      color: #af670a;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      margin-top: 60px;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #777;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ====== MENU FIXO ====== -->
+  <header id="menu-principal">
+    <div class="menu-container">
+      <div class="logo"><a href="index.html" class="brand">Thaís Almeida</a></div>
+      <button class="menu-toggle">☰</button>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown"><a href="maquiagens.html">Maquiagens</a></li>
+        <li><a href="penteados.html">Penteados</a></li>
+        <li class="selecionado" class="dropdown"><a href="servicos.html">Serviços</a></li>
+        <li><a href="portfolio.html">Portfólio</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        <li id="agendar"><a href="agendamento.html" id="agendar-btn">Agendar</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ====== CONTEÚDO PRINCIPAL ====== -->
+  <main>
+    <section id="servicos">
+      <h2>Tabela de Serviços e Valores</h2>
+
+      <ul class="tabela">
+        <li><strong>• Maquiagem Premium:</strong> R$150,00</li>
+        <li><strong>• Maquiagem Express:</strong> R$120,00</li>
+        <li><strong>• Maquiagem Infantil:</strong> R$90,00</li>
+      </ul>
+
+      <p class="aula-auto"><strong>Aula de Automaquiagem — R$250,00</strong></p>
+
+      <div class="categoria">
+        <h3>Serviços Adicionais:</h3>
+        <p><strong>• Babyliss:</strong> R$70,00</p>
+        <p><strong>• Penteado:</strong> R$100,00</p>
+      </div>
+
+      <div class="categoria">
+        <p><strong>Atendimento exclusivo em domicílio</strong></p>
+        <p>(Não tenho studio)</p>
+        <p><strong>Taxa a partir de R$25,00</strong></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== INÍCIO RODAPÉ ========== -->
+  <footer id="rodape">
+    © 2025 Thaís Almeida | Todos os direitos reservados.
+  </footer>
+  <!-- ========== FIM RODAPÉ ========== -->
+
+
+  <!-- Botpress -->
+  <script src="https://cdn.botpress.cloud/webchat/v3.3/inject.js"></script>
+  <script src="https://files.bpcontent.cloud/2025/11/03/12/20251103122449-BXQ4IDK9.js"></script>
+</body>
+
+</html>
