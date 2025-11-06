@@ -221,6 +221,22 @@ body {
   object-fit: cover
 }
 
+/* Ajuste para celulares */
+@media (max-width: 768px) {
+  .sobre-foto img {
+    max-width: 90%;
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .sobre-foto {
+    text-align: center;
+  }
+}
+
+
 /* ===================== Cards / Serviços ===================== */
 .cards {
   display: flex;
