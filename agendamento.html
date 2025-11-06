@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Agendar — Thaís Almeida</title>
   <link rel="stylesheet" href="css/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Amsterdam&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Amsterdam&display=swap"
+    rel="stylesheet">
   <style>
     body {
       background-color: #fffafc;
@@ -50,7 +52,7 @@
       padding: 20px;
       border-radius: 15px;
       display: inline-block;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     }
 
     .formas-pagamento h3 {
@@ -102,12 +104,12 @@
       <button class="menu-toggle">☰</button>
       <ul>
         <li><a href="index.html">Home</a></li>
-          <li class="dropdown"><a href="maquiagens.html">Maquiagens</a></li>
-          <li><a href="penteados.html">Penteados</a></li>
-          <li class="dropdown"><a href="servicos.html">Serviços</a></li>
-          <li><a href="portfolio.html">Portfólio</a></li>
-          <li><a href="contato.html">Contato</a></li>
-          <li class="selecionado" id="agendar"><a href="agendamento.html" id="agendar-btn">Agendar</a></li>
+        <li class="dropdown"><a href="maquiagens.html">Maquiagens</a></li>
+        <li><a href="penteados.html">Penteados</a></li>
+        <li class="dropdown"><a href="servicos.html">Serviços</a></li>
+        <li><a href="portfolio.html">Portfólio</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        <li class="selecionado" id="agendar"><a href="agendamento.html" id="agendar-btn">Agendar</a></li>
       </ul>
     </div>
   </header>
@@ -119,23 +121,26 @@
 
       <div class="passos">
         <p><strong>1º Passo:</strong><br>
-        Escolha qual das opções melhor lhe atende.</p>
+          Escolha qual das opções melhor lhe atende.</p>
 
         <p><strong>2º Passo:</strong><br>
-        Efetue o pagamento referente a 30% para a reserva.<br>
-        (Em caso de desistência o valor não será reembolsado.)</p>
+          Efetue o pagamento referente a 30% para a reserva.<br>
+          (Em caso de desistência o valor não será reembolsado.)</p>
       </div>
 
       <div class="formas-pagamento">
         <h3>Formas de pagamento:</h3>
         <p>• Pix</p>
-        <p>• Crédito (com acréscimo)</p>
-        <p>• Débito (com acréscimo)</p>
+        <p>• Crédito (com acréscimo de 6%)</p>
+        <p>• Débito (com acréscimo de 3%)</p>
       </div>
 
       <div class="botao-agendar">
-        <a href="#botpress-webchat">💄 Agende seu horário</a>
+        <a href="#" onclick="window.botpressWebChat.sendEvent({ type: 'show' }); return false;">
+          💄 Agende seu horário
+        </a>
       </div>
+
 
       <!-- Informação interna (não exibida ao público) -->
       <!-- Atendimento somente com hora marcada (sem horários fixos) -->
@@ -149,22 +154,20 @@
   <!-- ========== FIM RODAPÉ ========== -->
 
 
-  <!-- Botpress Assistant (envia confirmação de pagamento e agendamento) -->
-  <script src="https://cdn.botpress.cloud/webchat/v3.3/inject.js"></script>
-  <script src="https://files.bpcontent.cloud/2025/11/03/12/20251103122449-BXQ4IDK9.js"></script>
+ <!-- ========== BOTÃO E CHAT BOTPRESS ========== -->
+ <div class="botao-agendar">
+  <a href="#" id="abrirChat">💄 Agende seu horário</a>
+</div>
 
-  <script>
-    // Integração básica para que o botão abra diretamente o chat
-    document.querySelector('.botao-agendar a').addEventListener('click', (e) => {
-      e.preventDefault();
-      window.botpressWebChat.sendEvent({ type: 'show' });
-      window.botpressWebChat.sendEvent({
-        type: 'proactive-trigger',
-        payload: { text: 'Olá! Quero agendar um horário ✨' }
-      });
-    });
-  </script>
+  <!-- ========== BOTPRESS ========== -->
+  <script src="https://cdn.botpress.cloud/webchat/v3.3/inject.js"></script>
+  <script src="https://files.bpcontent.cloud/2025/11/03/12/20251103122449-BXQ4IDK9.js" defer></script>
+
+  <!-- ========== SCRIPT PERSONALIZADO ========== -->
+  <script src="js/agendamento.js"></script>
+
   <script src="js/script.js"></script>
 
 </body>
+
 </html>
