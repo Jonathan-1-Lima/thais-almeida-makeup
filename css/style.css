@@ -193,24 +193,27 @@ body {
 #sobre {
   padding: 60px 0;
   background: transparent;
-  margin-left: 80px;
+  margin: 0; /* remove a margem lateral que apertava o conteúdo */
 }
 
 .sobre-container {
   display: flex;
-  gap: 40px;
+  flex-wrap: wrap;
   align-items: center;
-  flex-wrap: wrap
+  justify-content: center;
+  gap: 40px;
+  padding: 0 20px;
 }
 
 .sobre-texto {
-  flex: 1;
-  min-width: 260px
+  flex: 1 1 320px;
+  min-width: 260px;
+  text-align: left;
 }
 
 .sobre-texto h2 {
   font-size: 1.8rem;
-  margin: 0 0 16px
+  margin: 0 0 16px;
 }
 
 .assinatura {
@@ -218,31 +221,38 @@ body {
   color: var(--accent);
   font-size: 2.2rem;
   display: inline-block;
-  margin-left: 8px
+  margin-left: 8px;
 }
 
 .sobre-foto {
-  flex: 1;
-  text-align: center
+  flex: 1 1 320px;
+  text-align: center;
 }
 
 .sobre-foto img {
   width: 100%;
-  height: auto;
-  max-width: 100%;
+  max-width: 420px; /* aumenta o tamanho máximo */
   border-radius: 14px;
   object-fit: cover;
 }
 
-@media (min-width: 768px) {
+/* Ajuste específico para telas pequenas */
+@media (max-width: 768px) {
+  .sobre-container {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
   .sobre-foto img {
-    max-width: 380px;
+    max-width: 90%; /* ocupa mais espaço no mobile */
+    height: auto;
+  }
+
+  .sobre-texto {
+    text-align: center;
   }
 }
 
-  .sobre-foto {
-    text-align: center;
-  }
 
 
 /* ===================== Cards / Serviços ===================== */
