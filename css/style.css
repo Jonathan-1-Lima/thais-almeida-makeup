@@ -7,6 +7,18 @@
   --muted: #85706a;
 }
 
+@font-face {
+  font-family: 'Amsterdam';
+  src: url('../fonts/Amsterdam.ttf') format('truetype');
+  font-display: swap;
+}
+#logo h1 {
+  font-family: 'Amsterdam', cursive;
+  font-size: 2.2rem;
+  color: #af670a;
+}
+
+
 * {
   box-sizing: border-box
 }
