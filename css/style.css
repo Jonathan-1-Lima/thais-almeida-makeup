@@ -224,12 +224,10 @@ body {
 /* Ajuste para celulares */
 @media (max-width: 768px) {
   .sobre-foto img {
-    max-width: 90%;
-    width: auto;
+    max-width: 90vw; /* usa quase toda a largura da tela */
     height: auto;
-    margin: 0 auto;
-    display: block;
   }
+
 
   .sobre-foto {
     text-align: center;
