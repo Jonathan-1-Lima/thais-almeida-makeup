@@ -5,6 +5,12 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
+@font-face {
+  font-family: 'Amsterdam';
+  src: url('../assets/fonts/Amsterdam.ttf') format('truetype');
+  font-display: swap;
+}
+
 
 :root {
   --bg: #fff6f8;
@@ -95,6 +101,12 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
 }
+
+.menu-icon {
+  position: relative;
+  z-index: 9999;
+}
+
 
 body {
   padding-top: 90px;
