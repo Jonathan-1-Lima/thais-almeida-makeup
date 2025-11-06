@@ -7,7 +7,7 @@ html {
 
 @font-face {
   font-family: 'Amsterdam';
-  src: url('../assets/fonts/Amsterdam.ttf') format('truetype');
+  src: url('assets/fonts/Amsterdam.ttf') format('truetype');
   font-display: swap;
 }
 
