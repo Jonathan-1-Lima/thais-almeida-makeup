@@ -142,9 +142,58 @@
   <!-- ========== FIM RODAPÉ ========== -->
 
 
-  <!-- Botpress Assistant -->
-  <script src="https://cdn.botpress.cloud/webchat/v3.3/inject.js"></script>
-  <script src="https://files.bpcontent.cloud/2025/11/03/12/20251103122449-BXQ4IDK9.js" defer></script>
+<!-- ====== BOTPRESS BELLE ====== -->
+<script src="https://cdn.botpress.cloud/webchat/v3.3/inject.js"></script>
+<script>
+  window.botpressWebChat = {
+    "botId": "belle-bot", // substitua se o ID for diferente
+    "clientId": "BXQ4IDK9", // o mesmo que está no seu script hospedado
+    "hideWidget": false,
+    "disableAnimations": false,
+    "enableTranscriptDownload": false,
+    "showBotInfoPage": false,
+    "className": "belle-bot",
+    "stylesheet": "",
+    "containerWidth": "100%",
+    "layoutWidth": "100%",
+    "config": {
+      "enableReset": false
+    }
+  };
+</script>
+
+<script src="https://files.bpcontent.cloud/2025/11/03/12/20251103122449-BXQ4IDK9.js" defer></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const checkBelle = setInterval(() => {
+      const belleContainer = document.querySelector(".bp-widget-container");
+
+      if (belleContainer) {
+        clearInterval(checkBelle);
+
+        // === Se for a página de agendamento ===
+        if (window.location.pathname.includes("agendamento.html")) {
+          belleContainer.classList.add("belle-centralizada");
+
+          const banner = document.querySelector(".banner-belle");
+          if (banner && banner.parentNode) {
+            banner.parentNode.insertBefore(belleContainer, banner.nextSibling);
+          }
+
+        } else {
+          // === Nas outras páginas ===
+          belleContainer.classList.remove("belle-centralizada");
+          belleContainer.style.position = "fixed";
+          belleContainer.style.bottom = "20px";
+          belleContainer.style.right = "20px";
+          belleContainer.style.zIndex = "9999";
+        }
+      }
+    }, 500);
+  });
+</script>
+
   <script src="js/script.js"></script>
 
 </body>
