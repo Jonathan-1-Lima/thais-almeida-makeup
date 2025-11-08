@@ -37,3 +37,42 @@ if (modalHome && modalImgHome && closeModal) {
     }
   });
 }
+// --- Modal de vídeos da Home ---
+const videoModal = document.getElementById("modalVideoHome");
+const videoPlayer = document.getElementById("videoHomePlayer");
+const closeVideo = videoModal?.querySelector(".close");
+
+if (videoModal && videoPlayer && closeVideo) {
+  // Quando o usuário clicar na miniatura do vídeo
+  document.querySelectorAll(".video-thumb").forEach(thumb => {
+    thumb.addEventListener("click", () => {
+      const videoSrc = thumb.dataset.video; // pega o caminho do vídeo
+      if (videoSrc) {
+        videoPlayer.querySelector("source").src = videoSrc;
+        videoPlayer.load();
+        videoPlayer.play();
+
+        videoModal.style.display = "flex";
+        document.body.style.overflow = "hidden";
+      }
+    });
+  });
+
+  // Fechar o modal
+  closeVideo.addEventListener("click", () => {
+    videoModal.style.display = "none";
+    videoPlayer.pause();
+    videoPlayer.querySelector("source").src = "";
+    document.body.style.overflow = "auto";
+  });
+
+  // Fechar clicando fora do vídeo
+  videoModal.addEventListener("click", (e) => {
+    if (e.target === videoModal) {
+      videoModal.style.display = "none";
+      videoPlayer.pause();
+      videoPlayer.querySelector("source").src = "";
+      document.body.style.overflow = "auto";
+    }
+  });
+}
