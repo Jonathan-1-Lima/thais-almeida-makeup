@@ -8,6 +8,55 @@
   <link rel="stylesheet" href="css/style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Amsterdam&display=swap"
     rel="stylesheet">
+
+  <style>
+    /* ======== Belle exclusiva da página de agendamento ======== */
+    #agendamento .banner-belle {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    #agendamento .belle-chat-centro {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto 30px;
+      width: 90px;
+      height: 90px;
+      background: linear-gradient(135deg, #d3ad74, #af670a);
+      border-radius: 50%;
+      box-shadow: 0 6px 12px rgba(175, 103, 10, 0.3);
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: pulse 2.5s infinite;
+    }
+
+    #agendamento .belle-chat-centro:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 16px rgba(175, 103, 10, 0.4);
+    }
+
+    #agendamento .belle-chat-centro img {
+      width: 60%;
+      height: 60%;
+    }
+
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(175, 103, 10, 0.4);
+      }
+
+      70% {
+        box-shadow: 0 0 0 20px rgba(175, 103, 10, 0);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(175, 103, 10, 0);
+      }
+    }
+  </style>
+
+
   <style>
     body {
       background-color: #fffafc;
@@ -119,6 +168,68 @@
       }
     }
 
+
+    /* ====== POSICIONAMENTO EXCLUSIVO DA BELLE (somente nesta página) ====== */
+
+    /* Garante que nada global afete */
+    .bp-widget-container,
+    .bp-widget,
+    iframe[src*="botpress"] {
+      all: unset !important;
+      position: fixed !important;
+      bottom: 90px !important;
+      /* ajusta a altura abaixo do banner */
+      left: 50% !important;
+      transform: translateX(-50%) !important;
+      z-index: 9999 !important;
+    }
+
+    /* Mantém o banner e setas centralizados */
+    .banner-belle {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .banner-belle p {
+      font-size: 1.1rem;
+      color: #af670a;
+      font-weight: 600;
+      margin-bottom: 5px;
+      animation: pulseText 2s infinite;
+    }
+
+    .setas {
+      font-size: 1.5rem;
+      color: #af670a;
+      animation: bounceArrows 1.5s infinite;
+    }
+
+    @keyframes bounceArrows {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(6px);
+      }
+    }
+
+    @keyframes pulseText {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.6;
+      }
+    }
+
+
+
     /* CENTRALIZAR a Belle SOMENTE nesta página */
     .belle-centralizada {
       position: relative !important;
@@ -200,6 +311,36 @@
       flex-shrink: 0;
       object-fit: contain;
     }
+
+    /* === Aparência da Belle na página de agendamento === */
+    .belle-centralizada {
+      position: relative !important;
+      margin: 25px auto 0 auto !important;
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+      transform: none !important;
+      right: auto !important;
+      bottom: auto !important;
+      z-index: 10 !important;
+    }
+
+    /* Pequena animação para destacar */
+    .belle-centralizada .bp-widget-button {
+      animation: pulseBelle 2s infinite ease-in-out;
+    }
+
+    @keyframes pulseBelle {
+
+      0%,
+      100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.1);
+      }
+    }
   </style>
 </head>
 
@@ -252,16 +393,17 @@
         </div>
       </div>
 
+
+
+
       <div class="contato-info">
         <p>💋 Ou mande mensagem direto no WhatsApp</p>
-        <a href="https://api.whatsapp.com/send?phone=5592981699494" target="_blank">
+        <a href="https://api.whatsapp.com/send?phone=5592981699494&text=Oi%2C%20quero%20agendar%20um%20hor%C3%A1rio%20%F0%9F%92%84"
+          target="_blank">
           <img src="assets/icons/whatsapp.svg" alt="WhatsApp" class="icon" />
           WhatsApp
         </a>
       </div>
-
-
-
 
     </section>
   </main>
@@ -278,82 +420,38 @@
   <!-- ====== SCRIPT GLOBAL ====== -->
   <script src="js/script.js"></script>
 
-  <!-- ====== POSICIONAMENTO DA BELLE ====== -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      // Aguarda o carregamento do widget Botpress
-      const checkBelle = setInterval(() => {
-        const belleContainer = document.querySelector(".bp-widget-container");
 
-        if (belleContainer) {
-          clearInterval(checkBelle);
 
-          // Detecta se é a página de agendamento
-          if (window.location.pathname.includes("agendamento.html")) {
-            belleContainer.classList.add("belle-centralizada");
-            const banner = document.querySelector(".banner-belle");
-            banner?.after(belleContainer);
-          } else {
-            // Nas outras páginas, deixa no canto
-            belleContainer.style.position = "fixed";
-            belleContainer.style.bottom = "20px";
-            belleContainer.style.right = "20px";
-          }
-        }
-      }, 500);
-    });
-  </script>
-  <!-- ====== BOTPRESS BELLE ====== -->
-  <script src="https://cdn.botpress.cloud/webchat/v3.3/inject.js"></script>
-  <script>
-    window.botpressWebChat = {
-      "botId": "belle-bot", // substitua se o ID for diferente
-      "clientId": "BXQ4IDK9", // o mesmo que está no seu script hospedado
-      "hideWidget": false,
-      "disableAnimations": false,
-      "enableTranscriptDownload": false,
-      "showBotInfoPage": false,
-      "className": "belle-bot",
-      "stylesheet": "",
-      "containerWidth": "100%",
-      "layoutWidth": "100%",
-      "config": {
-        "enableReset": false
-      }
-    };
-  </script>
+
 
   <script src="https://files.bpcontent.cloud/2025/11/03/12/20251103122449-BXQ4IDK9.js" defer></script>
 
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const checkBelle = setInterval(() => {
-        const belleContainer = document.querySelector(".bp-widget-container");
-
-        if (belleContainer) {
-          clearInterval(checkBelle);
-
-          // === Se for a página de agendamento ===
-          if (window.location.pathname.includes("agendamento.html")) {
-            belleContainer.classList.add("belle-centralizada");
-
-            const banner = document.querySelector(".banner-belle");
-            if (banner && banner.parentNode) {
-              banner.parentNode.insertBefore(belleContainer, banner.nextSibling);
-            }
-
+    function abrirChatBelle() {
+      // Aguarda o carregamento completo do Botpress
+      if (window.botpressWebChat) {
+        window.botpressWebChat.sendEvent({ type: "show" });
+      } else {
+        // Se o chat ainda não carregou, tenta de novo após um pequeno atraso
+        setTimeout(() => {
+          if (window.botpressWebChat) {
+            window.botpressWebChat.sendEvent({ type: "show" });
           } else {
-            // === Nas outras páginas ===
-            belleContainer.classList.remove("belle-centralizada");
-            belleContainer.style.position = "fixed";
-            belleContainer.style.bottom = "20px";
-            belleContainer.style.right = "20px";
-            belleContainer.style.zIndex = "9999";
+            alert("A Belle ainda está carregando... aguarde alguns segundos e tente novamente!");
           }
-        }
-      }, 500);
-    });
+        }, 1500);
+      }
+    }
   </script>
+
+
+  <style>
+    /* Esconde a bolinha flutuante padrão do chat só nesta página */
+    #bp-web-widget {
+      display: none !important;
+    }
+  </style>
+
 
 </body>
 
