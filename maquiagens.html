@@ -46,20 +46,20 @@
       <p>Ideal para formaturas, casamentos e eventos longos.</p>
     </div>
     <div class="galeria">
-      <img src="assets/img/mq-premium (1).JPG" alt="Make Premium 1">
-      <img src="assets/img/mq-premium (2).JPG" alt="Make Premium 2">
-      <img src="assets/img/mq-premium (3).JPG" alt="Make Premium 3">
-      <img src="assets/img/mq-premium (4).JPG" alt="Make Premium 4">
+      <img src="assets/img/mq-premium-1.jpg" alt="Make Premium 1">
+      <img src="assets/img/mq-premium-2.JPG" alt="Make Premium 2">
+      <img src="assets/img/mq-premium-3.JPG" alt="Make Premium 3">
+      <img src="assets/img/mq-premium-4.JPG" alt="Make Premium 4">
     </div>
   </section>
 
   <!-- MAQUIAGEM EXPRESS -->
   <section class="maquiagem-tipo esquerda">
     <div class="galeria">
-      <img src="assets/img/mq-express (1).JPG" alt="Make Express 1">
-      <img src="assets/img/mq-express (2).JPG" alt="Make Express 2">
-      <img src="assets/img/mq-express (3).JPG" alt="Make Express 3">
-      <img src="assets/img/mq-express (4).JPG" alt="Make Express 4">
+      <img src="assets/img/mq-express-1.JPG" alt="Make Express 1">
+      <img src="assets/img/mq-express-2.JPG" alt="Make Express 2">
+      <img src="assets/img/mq-express-3.JPG" alt="Make Express 3">
+      <img src="assets/img/mq-express-4.JPG" alt="Make Express 4">
     </div>
     <div class="texto">
       <h2>Maquiagem Express</h2>
@@ -85,7 +85,7 @@
   <script src="js/script.js"></script>
 
   <!-- ====== BOTPRESS BELLE ====== -->
-<script src="https://cdn.botpress.cloud/webchat/v3.3/inject.js"></script>
+<script src="https://cdn.botpress.cloud/webchat/v2/inject.js"></script>
 <script>
   window.botpressWebChat = {
     "botId": "belle-bot", // substitua se o ID for diferente
@@ -134,6 +134,39 @@
       }
     }, 500);
   });
+</script>
+
+<!-- Modal para visualizar imagens -->
+<div id="modalHome" class="modal">
+  <span class="close">&times;</span>
+  <img id="modalImgHome" src="" alt="">
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const modal = document.getElementById("modalHome");
+  const modalImg = document.getElementById("modalImgHome");
+  const closeBtn = document.querySelector("#modalHome .close");
+
+  // Todas as imagens da galeria
+  document.querySelectorAll(".galeria img").forEach(img => {
+    img.addEventListener("click", () => {
+      modal.style.display = "flex";
+      modalImg.src = img.src;
+    });
+  });
+
+  // Fechar modal
+  closeBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+
+  // Fechar ao clicar fora da imagem
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) modal.style.display = "none";
+  });
+
+});
 </script>
 
 
